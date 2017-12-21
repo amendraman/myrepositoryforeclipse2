@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+	<!-- Related to conection START -->
+	
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>	
+<property name="connection.url">jdbc:mysql://localhost:3306/MyDb</property>
+<property name="connection.user">root</property>
+<property name="connection.password">Welcome123</property>
+
+	<!-- Related to connection END -->	
+<property name="show_sql">true</property>
+<property name="dialet">org.hibernate.dialect.MySQLDialect</property>
+<property name="hbm2ddl.auto">update </property>
+	
+	<!-- Related to mapping start -->
+<mapping resource="user.hbm.xml"/>	
+
+	<!-- Name the annotated entity class -->
+<mapping class="com.gdg.rocky.hibernate.CampusMindsPojo"/>
+<mapping class="com.gdg.rocky.hibernate.LeadPojo"/>
+<mapping class = "com.gdg.rocky.hibernate.OrchardProgramPojo"/>
+	</session-factory>
+</hibernate-configuration>
