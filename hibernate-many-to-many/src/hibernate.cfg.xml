@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	 <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>	
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernatemanytomany</property>
+		<property name="connection.user">root</property>
+		<property name="connection.password">Welcome123</property>
+		
+			<!-- Related to connection END -->	
+		<property name="show_sql">true</property>
+		<!-- Diff database have diff sql....so hibernate need to know which database are we talkin about.....that is why we use Dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property> 
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hbm2ddl.auto">update</property>
+			
+		
+		<mapping class="com.rocky.model.College"/>
+        <mapping class="com.rocky.model.Student"/>
+    </session-factory>
+</hibernate-configuration>
