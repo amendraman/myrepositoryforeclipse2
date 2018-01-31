@@ -1,0 +1,16 @@
+package com.rocky.service;
+
+import com.rocky.model.Person;
+import com.rocky.model.Response;
+
+public interface PersonService {
+	
+	public Response addPerson(Person p);
+	
+	public Response deletePerson(int id);
+	
+	public Person getPerson(int id);
+	
+	public Person[] getAllPersons();
+
+}
